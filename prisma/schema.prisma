@@ -6,56 +6,30 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Entreprise {
   // Step 1
-  id Int @id @default(autoincrement()) @db.UnsignedInt
+  id Int @id @default(autoincrement()) 
 
-  nom_entreprise   String
-  lieuSiege        String
-  contact          String
-  email            String
-  date             String
-  groupe           String
-  ville            String
-  commune          String
-  group1           String
-  group2           String
-  group3           String
-  name_1           String
-  name_2           String
-  name_3           String
-  name_4           String
-  name_5           String
-  group5           String
-  activites        String
-  employeTotal     String
-  employeFemme     String
-  employeHomme     String
-  nomPrenom        String
-  groupe1          String
-  groupe2          String
-  email_2          String
-  telephone        String
-  whatsapp         String
-  compte_fb        String
-  fonctions        String
-  groupes1         String
-  raison           String
-  programme_raison String
-  motivation       String
-  connaissances    String
-  equipement       String
-  groupes2         String
-  groupes3         String
-  comment          String
-  groupes4         String
-  partage          String
-  transformation   String
-  groupes5         String
-
+  nom                 String?
+  lieu                String?
+  contact             String?
+  date                String?
+  region              String?
+  ville               String? 
+  commune             String?
+  chriffre_daffaire   String?
+  forme_juridique     String?
+  secteur             String?
+  activite            String?
+  documemts_legaux    String? 
+  regime              String?
+  employes_totaux     String?           
+  femmes              String? 
+  hommes              String? 
+  information         String?
   created_at DateTime @default(now())
 }

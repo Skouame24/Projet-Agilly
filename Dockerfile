@@ -7,9 +7,10 @@
   WORKDIR /app
    # copier les fichiers qui servent à installer les dépendances pour le fonctionnement du projet
    COPY ["package.json", "package-lock.json*", "./"]
+   COPY prisma ./prisma/ 
   # execution de la commande pour installer les dépendances
   RUN npm install --production
   # copier l'ensemble du code source au sein du conteneur
   COPY . .
   # commande pour démarrer l'execution du projet
-  CMD ["node", "server.js"]
+  CMD ["npm", "start"]
